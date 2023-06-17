@@ -7,10 +7,47 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header>
+    <header class="title">
       <h1>Temperatur Conversion</h1>
     </header>
-    <main></main>
+    <main class="container">
+      <!-- ADD NILAI SUHU -->
+      <div class="add-container">
+        <div class="input-row">
+          <div class="input-group">
+            <label for="nilai">Celcius (&deg;C)</label>
+            <input type="number" name="celcius" id="celcius" />
+          </div>
+          <div class="input-group">
+            <label for="nilai">Fahrenheit (&deg;F)</label>
+            <input
+              type="number"
+              name="fahrenheit"
+              id="fahrenheit"
+              class="far"
+            />
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="nilai">kelvin (&deg;K)</label>
+            <input type="number" name="kelvin" id="kelvin" />
+          </div>
+
+          <div class="input-group">
+            <label for="nilai">Reamur (&deg;R)</label>
+            <input type="number" name="reamur" id="reamur" />
+          </div>
+        </div>
+
+        <button type="submit" id="submit" class="btn submit">submit</button>
+        <button type="reset" id="reset" class="btn res">reset</button>
+      </div>
+      <div class="formula-container">
+        <label for="formula">Formula</label>
+        <p id="showFormula"></p>
+      </div>
+    </main>
     <footer></footer>
   </body>
   <script src="js/script.js"></script>

@@ -1,0 +1,122 @@
+/* FONT GOOGLE */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  text-align: center;
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 4px;
+}
+
+/* MAIN CONTAINER */
+.container {
+  width: 450px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 5px 5px 15px lightgray;
+  padding: 20px;
+  margin: 20px;
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.input-row .input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-row .input-group label {
+  margin-bottom: 5px;
+}
+
+button {
+  width: auto;
+  padding: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+}
+
+.btn {
+  border: 1px lightgray solid;
+  transition: all 0.5;
+  margin-bottom: 10px;
+}
+
+.btn,
+.submit {
+  margin-right: 25px;
+}
+
+.btn,
+.res {
+  margin-left: 14px;
+}
+.btn:hover {
+  box-shadow: 5px 5px 15px lightgray;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.reset {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  opacity: 0.2;
+}
+
+/* FORMULA CONTAINER */
+.formula-container {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid black;
+}
+
+.formula-container,
+label {
+  font-style: italic;
+}
+
+label {
+  display: block;
+  padding: 7px 0;
+  font-weight: 500;
+  text-align: left;
+}
+
+input[type="number"] {
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  outline: none;
+}
