@@ -101,9 +101,14 @@ button {
   border-top: 1px solid black;
 }
 
-.formula-container,
-label {
+.formula-container label {
   font-style: italic;
+}
+
+.formula-container #showFormula {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
 }
 
 label {
@@ -125,6 +130,12 @@ input[type="number"] {
 /* FOOTER */
 footer h3 {
   margin-top: 30px;
+  font-weight: 600;
+}
+
+footer h3 a {
+  text-decoration: none;
+  color: lightseagreen;
 }
 
 /* RESPONSIVE STYLE */
@@ -158,6 +169,10 @@ footer h3 {
     margin-right: 10px;
     margin-left: 10px;
     width: calc(50% - 20px);
+  }
+
+  .formula-container #showFormula {
+    font-size: 12px;
   }
 }
 
