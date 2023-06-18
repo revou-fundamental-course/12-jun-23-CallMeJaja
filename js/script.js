@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", function () {
     document.getElementById("fahrenheit").value = "";
     document.getElementById("kelvin").value = "";
     document.getElementById("reamur").value = "";
+    document.getElementById("showFormula").innerHTML = "";
   });
 
   submitBtn.addEventListener("click", function () {
@@ -21,6 +22,8 @@ window.addEventListener("DOMContentLoaded", function () {
     let fahrenheit = parseFloat(document.getElementById("fahrenheit").value);
     let kelvin = parseFloat(document.getElementById("kelvin").value);
     let reamur = parseFloat(document.getElementById("reamur").value);
+
+    let formulaText = "";
 
     if (!isNaN(celcius)) {
       let far = celcius * 1.8 + 32;
@@ -31,6 +34,26 @@ window.addEventListener("DOMContentLoaded", function () {
       document.getElementById("fahrenheit").value = far.toFixed(2);
       document.getElementById("kelvin").value = kel.toFixed(2);
       document.getElementById("reamur").value = rea.toFixed(2);
+
+      // Menampilkan Formula
+      formulaText =
+        "Celcius ke Fahrenheit : " +
+        celcius +
+        " * 1.8 + 32 = " +
+        far.toFixed(2) +
+        " \u00B0F" +
+        "<br>" +
+        "Celcius ke Kelvin : " +
+        celcius +
+        " + 273.15 = " +
+        kel.toFixed(2) +
+        " \u00B0K" +
+        "<br>" +
+        "Celcius ke Kelvin : " +
+        celcius +
+        " + 0.8 = " +
+        rea.toFixed(2) +
+        " \u00B0Ré";
     } else if (!isNaN(fahrenheit)) {
       let cel = (fahrenheit - 32) / 1.8;
       let kel = (fahrenheit + 459.67) * (5 / 9);
@@ -39,6 +62,29 @@ window.addEventListener("DOMContentLoaded", function () {
       document.getElementById("celcius").value = cel.toFixed(2);
       document.getElementById("kelvin").value = kel.toFixed(2);
       document.getElementById("reamur").value = rea.toFixed(2);
+
+      // Menampilkan Formula
+      formulaText =
+        "Fahrenheit ke Celcius : " +
+        "(" +
+        fahrenheit +
+        " - 32) / 1.8 = " +
+        cel.toFixed(2) +
+        " \u00B0C" +
+        "<br>" +
+        "Fahrenheit ke Kelvin : " +
+        "(" +
+        fahrenheit +
+        " + 459.67) * (5 / 9) =" +
+        kel.toFixed(2) +
+        " \u00B0K" +
+        "<br>" +
+        "Fahrenheit ke Reamur : " +
+        "(" +
+        fahrenheit +
+        " - 32) * (4 / 9) = " +
+        rea.toFixed(2) +
+        " \u00B0Ré";
     } else if (!isNaN(kelvin)) {
       let cel = kelvin - 273.15;
       let far = kelvin * 1.8 - 459.67;
@@ -47,6 +93,27 @@ window.addEventListener("DOMContentLoaded", function () {
       document.getElementById("celcius").value = cel.toFixed(2);
       document.getElementById("fahrenheit").value = far.toFixed(2);
       document.getElementById("reamur").value = rea.toFixed(2);
+
+      // Menampilkan Formula
+      formulaText =
+        "Kelvin ke Celcius : " +
+        kelvin +
+        " - 273.15 = " +
+        cel.toFixed(2) +
+        " \u00B0C" +
+        "<br>" +
+        "Kelvin ke Fahrenheit : " +
+        kelvin +
+        " * 1.8 - 459.67 = " +
+        far.toFixed(2) +
+        " \u00B0F" +
+        "<br>" +
+        "Kelvin ke Reamur : " +
+        "(" +
+        kelvin +
+        " - 273.15) * 0.8 = " +
+        rea.toFixed(2) +
+        " \u00B0Ré";
     } else if (!isNaN(reamur)) {
       let cel = reamur * 1.25;
       let far = reamur * 2.25 + 32;
@@ -55,7 +122,28 @@ window.addEventListener("DOMContentLoaded", function () {
       document.getElementById("celcius").value = cel.toFixed(2);
       document.getElementById("fahrenheit").value = far.toFixed(2);
       document.getElementById("kelvin").value = kel.toFixed(2);
+
+      // Menampilkan Formula
+      formulaText =
+        "Reamur ke Celcius : " +
+        reamur +
+        " * 1.25 = " +
+        cel.toFixed(2) +
+        " \u00B0C" +
+        "<br>" +
+        "Reamur ke Fahrenheit : " +
+        reamur +
+        " * 2.25 + 32 = " +
+        far.toFixed(2) +
+        " \u00B0F" +
+        "<br>" +
+        "Reamur ke Kelvin : " +
+        reamur +
+        " * 1.25 + 273.15 = " +
+        kel.toFixed(2) +
+        " \u00B0Ré";
     }
+    document.getElementById("showFormula").innerHTML = formulaText;
   });
 
   function clearInput(input) {
