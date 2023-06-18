@@ -120,3 +120,57 @@ input[type="number"] {
   border-radius: 10px;
   outline: none;
 }
+
+/* RESPONSIVE STYLE */
+
+/* MOBILE */
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .title h1 {
+    font-size: 24px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .input-row .input-group {
+    margin-bottom: 15px;
+  }
+
+  .btn.submit,
+  .btn.res {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: calc(50% - 20px);
+  }
+}
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    max-width: 600px;
+    margin: 10px auto;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 769px) {
+  .container {
+    max-width: 800px;
+    margin: 10px auto;
+  }
+
+  .input-row .input-group {
+    flex-basis: calc(50% - 10px);
+  }
+}
