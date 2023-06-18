@@ -123,6 +123,11 @@ input[type="number"] {
   outline: none;
 }
 
+/* FOOTER */
+footer h3 {
+  margin-top: 30px;
+}
+
 /* RESPONSIVE STYLE */
 
 /* MOBILE */
