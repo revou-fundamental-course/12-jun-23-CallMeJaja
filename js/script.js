@@ -75,7 +75,7 @@ window.addEventListener("DOMContentLoaded", function () {
         "Fahrenheit ke Kelvin : " +
         "(" +
         fahrenheit +
-        " + 459.67) * (5 / 9) =" +
+        " + 459.67) * (5 / 9) = " +
         kel.toFixed(2) +
         " \u00B0K" +
         "<br>" +
