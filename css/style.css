@@ -129,7 +129,7 @@ input[type="number"] {
 
 /* FOOTER */
 footer h3 {
-  margin-top: 30px;
+  margin: 20px 0;
   font-weight: 600;
 }
 
@@ -173,7 +173,6 @@ footer h3 a {
 
   .formula-container #showFormula {
     font-size: 13px;
-    margin-bottom: auto;
   }
 }
 
