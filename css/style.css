@@ -172,7 +172,8 @@ footer h3 a {
   }
 
   .formula-container #showFormula {
-    font-size: 12px;
+    font-size: 13px;
+    margin-bottom: auto;
   }
 }
 
