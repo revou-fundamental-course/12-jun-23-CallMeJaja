@@ -83,6 +83,8 @@ button {
 
 .btn:active {
   transform: scale(0.9);
+  box-shadow: none;
+  background-color: transparent;
 }
 
 .reset {
