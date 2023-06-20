@@ -12,7 +12,7 @@
     </header>
     <main class="container">
       <!-- ADD NILAI SUHU -->
-      <div class="add-container">
+      <div class="add-container" id="container">
         <div class="input-row">
           <div class="input-group">
             <label for="nilai">Celcius (&deg;C)</label>
@@ -60,4 +60,16 @@
     </footer>
   </body>
   <script src="js/script.js"></script>
+  <script>
+    // Menambahkan Fungsi ketika Tombol Enter dipencet
+    let container = document.getElementById("container");
+
+    container.addEventListener("keydown", function (event) {
+      if (event.keyCode === 13) {
+        if (event.target.tagName == "INPUT") {
+          document.getElementById("submit").click();
+        }
+      }
+    });
+  </script>
 </html>
