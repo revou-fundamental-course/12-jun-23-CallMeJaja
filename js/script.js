@@ -2,6 +2,15 @@ window.addEventListener("DOMContentLoaded", function () {
   let inputFields = document.querySelectorAll(".input-group input");
   let submitBtn = document.getElementById("submit");
   let resetBtn = document.getElementById("reset");
+  let container = document.getElementById("container");
+
+  submitBtn.addEventListener("click", function () {
+    Convert();
+  });
+
+  resetBtn.addEventListener("click", function () {
+    Reset();
+  });
 
   inputFields.forEach(function (input) {
     input.addEventListener("input", function () {
@@ -9,21 +18,26 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  resetBtn.addEventListener("click", function () {
-    document.getElementById("celcius").value = "";
-    document.getElementById("fahrenheit").value = "";
-    document.getElementById("kelvin").value = "";
-    document.getElementById("reamur").value = "";
-    document.getElementById("showFormula").innerHTML = "";
+  container.addEventListener("keydown", function (event) {
+    eventEnter(event);
   });
 
-  submitBtn.addEventListener("click", function () {
+  /**
+   * Fungsi Konversi Nilai Suhu
+   * @name function Convert()
+   */
+
+  function Convert() {
     let celcius = parseFloat(document.getElementById("celcius").value);
     let fahrenheit = parseFloat(document.getElementById("fahrenheit").value);
     let kelvin = parseFloat(document.getElementById("kelvin").value);
     let reamur = parseFloat(document.getElementById("reamur").value);
-
     let formulaText = "";
+
+    if (isNaN(celcius) && isNaN(fahrenheit) && isNaN(kelvin) && isNaN(reamur)) {
+      alert("Input Kosong, mohon di isi.");
+      return;
+    }
 
     if (!isNaN(celcius)) {
       let far = celcius * 1.8 + 32;
@@ -31,11 +45,13 @@ window.addEventListener("DOMContentLoaded", function () {
       let rea = celcius + 0.8;
 
       // Menampilkan Nilai Hasil Konversinya ke Input
+
       document.getElementById("fahrenheit").value = far.toFixed(2);
       document.getElementById("kelvin").value = kel.toFixed(2);
       document.getElementById("reamur").value = rea.toFixed(2);
 
       // Menampilkan Formula
+
       formulaText =
         "Celcius ke Fahrenheit : " +
         celcius +
@@ -64,6 +80,7 @@ window.addEventListener("DOMContentLoaded", function () {
       document.getElementById("reamur").value = rea.toFixed(2);
 
       // Menampilkan Formula
+
       formulaText =
         "Fahrenheit ke Celcius : " +
         "(" +
@@ -95,6 +112,7 @@ window.addEventListener("DOMContentLoaded", function () {
       document.getElementById("reamur").value = rea.toFixed(2);
 
       // Menampilkan Formula
+
       formulaText =
         "Kelvin ke Celcius : " +
         kelvin +
@@ -124,6 +142,7 @@ window.addEventListener("DOMContentLoaded", function () {
       document.getElementById("kelvin").value = kel.toFixed(2);
 
       // Menampilkan Formula
+
       formulaText =
         "Reamur ke Celcius : " +
         reamur +
@@ -144,8 +163,12 @@ window.addEventListener("DOMContentLoaded", function () {
         " \u00B0Ré";
     }
     document.getElementById("showFormula").innerHTML = formulaText;
-  });
+  }
 
+  /**
+   * Fungsi Perubahan Nilai Input
+   * @name function clearInput()
+   */
   function clearInput(input) {
     let otherInputs = document.querySelectorAll(
       ".input-group input:not(#" + input.id + ")"
@@ -153,5 +176,29 @@ window.addEventListener("DOMContentLoaded", function () {
     otherInputs.forEach(function (otherInput) {
       otherInput.value = "";
     });
+  }
+
+  /**
+   * Fungsi Untuk Clear All Input
+   * @name function Reset()
+   */
+  function Reset() {
+    document.getElementById("celcius").value = "";
+    document.getElementById("fahrenheit").value = "";
+    document.getElementById("kelvin").value = "";
+    document.getElementById("reamur").value = "";
+    document.getElementById("showFormula").innerHTML = "";
+  }
+
+  /**
+   * Fungsi Ketika Tombol Enter di Klik
+   * @name function eventEnter()
+   */
+  function eventEnter(event) {
+    if (event.key === "Enter") {
+      if (event.target.tagName === "INPUT") {
+        document.getElementById("submit").click();
+      }
+    }
   }
 });
