@@ -2,10 +2,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 :root {
+  /* Dark Mode Theme */
   --grey-dark: #2b2e3a;
   --white: #fff;
   --bg-border-dark: #2f3445;
   --bg-button-dark: #3f465b;
+
+  /* Day Mode Theme */
+
   --outline: #ffffff3e;
 }
 
@@ -54,6 +58,12 @@ body {
 
 .input-row .input-group label {
   margin-bottom: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .input-row .input-group input[type="number"] {
@@ -224,3 +234,10 @@ footer h3 a:hover {
     flex-basis: calc(50% - 10px);
   }
 }
+
+/* Otomatis Switch Mode Day/Dark */
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background: var(--bg-border-dark);
+  }
+} */
